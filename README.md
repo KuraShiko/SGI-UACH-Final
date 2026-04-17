@@ -3,7 +3,7 @@ Este repositorio contiene el proyecto final para la materia de Administración d
 
 ## 📁 Archivos del proyecto
 
-* `SGI'Final.cpp`: Contiene el código fuente del programa escrito en C++. Incluye la lógica principal, el menú interactivo, las validaciones de entrada y el sistema de navegación por páginas.
+* `SGI-Final.cpp`: Contiene el código fuente del programa escrito en C++. Incluye la lógica principal, el menú interactivo, las validaciones de entrada y el sistema de navegación por páginas.
 * `inventario.txt`: Es un archivo de texto que funciona como base de datos inicial para realizar pruebas. Permite que el sistema cargue información desde su primera ejecución sin necesidad de registrar productos manualmente uno por uno, aunque si se compila el codigo principal por su cuenta este mismo creara el archivo con un inventario vacio.
 
 ## 🚀 Funcionalidades del sistema
