@@ -1,0 +1,7 @@
+1 50 Coca_Cola_600ml
+2 30 Sabritas_Adobadas_Medianas
+3 15 Galletas_Oreo_Grandes
+4 100 Botella_Agua_1_Litro
+5 12 Gansito_Marinela
+6 23 Maruchan_de_Pollo
+7 24 Tommys
