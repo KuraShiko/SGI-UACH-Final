@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <cstdlib> 
+#include <cctype>
 
 using namespace std;
 
@@ -41,7 +42,6 @@ void guardarDatos() {
 
 void agregarProducto() {
     Producto nuevo;
-    
     cout << "\nNombre del producto: ";
     cin.ignore(); 
     getline(cin, nuevo.nombre); 
@@ -52,10 +52,20 @@ void agregarProducto() {
         }
     }
     
+    string nombreNuevoMin = nuevo.nombre;
+    for (int i = 0; i < nombreNuevoMin.length(); i++) {
+        nombreNuevoMin[i] = tolower(nombreNuevoMin[i]);
+    }
+    
     for (int i = 0; i < inventario.size(); i++) {
-        if (inventario[i].nombre == nuevo.nombre) {
+        string nombreExistenteMin = inventario[i].nombre;
+        for (int j = 0; j < nombreExistenteMin.length(); j++) {
+            nombreExistenteMin[j] = tolower(nombreExistenteMin[j]);
+        }
+        
+        if (nombreExistenteMin == nombreNuevoMin) {
             cout << "Error: Ese producto ya existe con la ID " << inventario[i].id << ".\n";
-            cout << "Mejor usa la opcion 3 para modificar su stock.\n";
+            cout << "Utiliza la opcion 3 para modificar su stock.\n";
             return; 
         }
     }
@@ -105,7 +115,6 @@ void mostrarInventario() {
         cout << "--------------------------\n";
         cout << "Mostrando " << inicio + 1 << " al " << fin << " de " << inventario.size() << " productos.\n\n";
 
-        // Menu inteligente
         cout << "Opciones de navegacion:\n";
         if (inicio + limite < inventario.size()) {
             cout << "1. Siguiente pagina\n";
@@ -124,7 +133,7 @@ void mostrarInventario() {
             inicio -= limite; 
         } 
         else if (opcionNavegacion == 3) {
-            break;
+            break; 
         } 
         else {
             cout << "Opcion no valida.\n";
